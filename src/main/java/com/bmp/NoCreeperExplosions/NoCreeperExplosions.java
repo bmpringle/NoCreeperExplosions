@@ -1,5 +1,5 @@
 package com.bmp.NoCreeperExplosions;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftCreeper;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,7 +18,7 @@ public class NoCreeperExplosions  extends JavaPlugin implements Listener {
     
     @EventHandler
     public void entityExplodeEvent(org.bukkit.event.entity.EntityExplodeEvent event){
-    	if(event.getEntity() instanceof CraftCreeper) {
+    	if(event.getEntity() instanceof Creeper) {
     		event.blockList().clear();
     	}
     }
